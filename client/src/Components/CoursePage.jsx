@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-
+import './CoursePage.css'
 export const CoursePage = (props) => {
 
 const [course,setCourse]=useState({});
@@ -26,33 +26,33 @@ const [course,setCourse]=useState({});
     },[])
 
   return (
-    <div className='main'>
+    <div className='main-container'>
         <h2>{course.subject}</h2>
-        <h3>Department of <strong> {course.title} </strong></h3>
-        <h3>Semester: {course.semester} </h3>
-        <h4> Credits: {course.credit} </h4>
+        <h4>Department of <strong> {course.title} </strong></h4>
+        <h4>Semester: {course.semester} </h4>
+        <h4>Credits: {course.credit} </h4>
         <h4>Elective type: {course.elective}</h4>
         {
             course.modules?.map((module,index)=>
             {
                 return(
-                    <div key={index} >
-                        <h3>{`MODULE ${index+1} `}</h3> <br />
-                        <h6>No. of Classes: {module.duration}</h6>
+                    <div className='moduledetails' key={index} >
+                        <h2>{`MODULE ${index+1} `}</h2>
+                        <h3>No. of Classes: {module.duration}</h3>
                         {
                             module.topics?.map((topic,index)=>
                                 {
                                     return(
-                                        <div key={index}>
-                                             <h5 key={index} >{topic.title}</h5>
+                                        <div className='contentdetails' key={index}>
+                                             <h4 key={index} >{topic.title}</h4>
                                              {
                                                 topic.resources?.map((resource,index)=>
                                                 {
                                                     return(
                                                         <div key={index} >
-                                                            <h6>{resource.type}</h6>
-                                                            <a href={resource.url} target='_blank'><h6>{resource.url}</h6></a>
-                                                            <h6>{resource.author}</h6>
+                                                            <h4>{resource.type}</h4>
+                                                            <a href={resource.url} target='_blank'><h4>{resource.url}</h4></a>
+                                                            <h4>{resource.author}</h4>
                                                         </div>
                                                     )
                                                 })
