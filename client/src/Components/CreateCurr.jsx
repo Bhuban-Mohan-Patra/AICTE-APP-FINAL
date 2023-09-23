@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './CreateCurr.css'
 
 function CreateCurr() {
   const [courseData, setCourseData] = useState({
@@ -53,21 +54,8 @@ function CreateCurr() {
   };
 
   return (
-    <div>
-      <form method='POST' onSubmit={handleSubmit}>
-      <div>
-          <label htmlFor="degree">Degree:</label>
-          <select 
-            id="degree"
-            name="degree"
-            value={courseData.degree}
-            onChange={(e) => setCourseData({ ...courseData, degree: e.target.value })}
-          >
-            <option value="UG">UG</option>
-            <option value="PG">PG</option>
-            <option value="Diploma">Diplola</option>
-          </select>
-        </div>
+    <div className='cform'>
+      <form method='POST' className='courseform' onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Course Title:</label>
           <input
@@ -79,7 +67,7 @@ function CreateCurr() {
           />
         </div>
         <div>
-          <label htmlFor="semester">Specify Semester</label>
+          <label htmlFor="semester">Specify Semester:</label>
           <input type="text"
             id="semester"
             name="semester"
@@ -88,7 +76,7 @@ function CreateCurr() {
           />
         </div>
         <div>
-          <label htmlFor="subject">Subject</label>
+          <label htmlFor="subject">Subject:</label>
           <input type='text'
             id="subject"
             name="subject"
@@ -97,7 +85,7 @@ function CreateCurr() {
           />
         </div>
         <div>
-          <label htmlFor="subject_code">Specify Subject Code</label>
+          <label htmlFor="subject_code">Specify Subject Code:</label>
           <input type="text"
             id="subject_code"
             name="subject_code"
@@ -119,7 +107,7 @@ function CreateCurr() {
             </select>
         </div>
         <div>
-          <label htmlFor="credit">Specify Credit</label>
+          <label htmlFor="credit">Specify Credit:</label>
           <input type="number"
             id="credit"
             name="credit"

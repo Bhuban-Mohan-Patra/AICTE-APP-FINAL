@@ -17,13 +17,13 @@ export const DesProfile = () => {
                 <div className="profileDet">
                     <h3>Profile Details</h3>
                     <div className="details">
-                            <li> <Person2Icon/> Name: <strong>Saket Nanda</strong> </li>
-                            <li><TableViewIcon/> <strong>Department: </strong> Mechanical Engg.</li>
-                            <li><TodayIcon/><strong>DOB:</strong> 1/12/2002</li>
-                            <li><WcIcon/> <strong>Gender:</strong> Male</li>
-                            <li><ContactPhoneIcon/> <strong>Phone:</strong> 124152332</li>
-                            <li><EmailIcon/><strong>Email: </strong> saket@gmail.com </li>
-                            <li><AssignmentIcon /> <strong> Role:</strong> Curriculum Designer</li>
+                            <li> <Person2Icon/> <strong> Name:</strong><span>Saket Nanda</span> </li>
+                            <li><TableViewIcon/> <strong>Department: </strong><span> Mechanical Engg.</span></li>
+                            <li><TodayIcon/><strong>DOB:</strong> <span>1/12/2002</span></li>
+                            <li><WcIcon/> <strong>Gender:</strong> <span>Male</span></li>
+                            <li><ContactPhoneIcon/> <strong>Phone:</strong> <span>124152332</span></li>
+                            <li><EmailIcon/><strong>Email: </strong><span>saket@gmail.com</span>  </li>
+                            <li><AssignmentIcon /> <strong> Role:</strong><span> Curriculum Designer</span></li>
                     </div>
                 </div>
             </div>
