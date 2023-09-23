@@ -52,7 +52,7 @@ function Navbar() {
             {/* <li><button className='signupbtn'><NavLink to='/signup'>Register</NavLink></button></li> */}
             <li>
               <select name="signup" id="signup" className='signupbtn' defaultValue="Resgiter As" onChange={goToSignup}  >
-                <option value="RegisterAs" hidden>Resgister As</option>
+                <option value="RegisterAs" hidden>Register As</option>
                 <option value="educator">Educator</option>
                 <option value="designer">Desginer</option>
               </select>
