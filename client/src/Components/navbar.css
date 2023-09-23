@@ -1,0 +1,98 @@
+.mainlogo{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+}
+
+.logoname{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #4682A9;
+    font-size: large;
+}
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    background-color:#d0ecf8;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 10px;
+}
+
+nav ul {
+    pointer-events: auto;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+*{
+    box-sizing: border-box;
+    color: #371a1a;
+}
+
+body{
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.loginbtn{
+  background: #78badb;
+  border-radius: 999px;
+  box-shadow: #91C8E4 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 5px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.signupbtn{
+    background: #ffffff;
+    border-radius: 999px;
+    box-shadow: #69a4c2 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 5px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+  }
+
+.loginbtn:hover{
+    box-shadow: none;
+}
+
+.signupbtn:hover{
+    box-shadow: none;
+}
+
+nav a:hover{
+    color: #4682A9;
+}
