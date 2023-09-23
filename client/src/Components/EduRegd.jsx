@@ -79,7 +79,7 @@ const Submit=async(e)=>
             <form onSubmit={Submit}>
                 <div className="user-details">
                     <div className="input-box">
-                        <span className="details">Username</span>
+                        <span className="details">Name</span>
                         <input type="text" placeholder="Enter Your Username" name='name'  required onChange={changeInputs} />
                     </div>
                     <div className="input-box">
