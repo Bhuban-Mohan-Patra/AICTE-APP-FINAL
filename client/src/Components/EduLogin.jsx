@@ -46,11 +46,12 @@ export const EduLogin = () => {
           // console.log(response.authToken);
           localStorage.setItem('User',response.authToken );
           localStorage.setItem('UserType',response.type);
+          const token=localStorage.getItem('User');
           console.log(localStorage.getItem('User'));
           console.log(localStorage.getItem('UserType'));
   
           alert(response.success)
-        //   Navigate('/');
+          Navigate(`/educator/dashboard`);
   
         }
   
