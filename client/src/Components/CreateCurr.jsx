@@ -4,6 +4,7 @@ import './CreateCurr.css'
 
 function CreateCurr() {
   const [courseData, setCourseData] = useState({
+    degree: 'UG',
     title: '',
     semester: '',
     subject: '',

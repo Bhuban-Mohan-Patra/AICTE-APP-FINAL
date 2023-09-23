@@ -16,7 +16,7 @@ const topicSchema = new mongoose.Schema({
 
 
 const moduleSchema = new mongoose.Schema({
-  module_no: Number,
+  duration: Number,
   topics: [topicSchema],
 });
 
@@ -24,6 +24,7 @@ const moduleSchema = new mongoose.Schema({
 
 
 const courseSchema = new mongoose.Schema({
+  degree: String,
   title: String,
   objective: String,
   category: String,
