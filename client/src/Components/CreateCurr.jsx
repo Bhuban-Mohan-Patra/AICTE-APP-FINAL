@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function CreateCurr() {
   const [courseData, setCourseData] = useState({
+    degree: 'UG',
     title: '',
     semester: '',
     subject: '',
@@ -54,6 +55,19 @@ function CreateCurr() {
   return (
     <div>
       <form method='POST' onSubmit={handleSubmit}>
+      <div>
+          <label htmlFor="degree">Degree:</label>
+          <select 
+            id="degree"
+            name="degree"
+            value={courseData.degree}
+            onChange={(e) => setCourseData({ ...courseData, degree: e.target.value })}
+          >
+            <option value="UG">UG</option>
+            <option value="PG">PG</option>
+            <option value="Diploma">Diplola</option>
+          </select>
+        </div>
         <div>
           <label htmlFor="title">Course Title:</label>
           <input

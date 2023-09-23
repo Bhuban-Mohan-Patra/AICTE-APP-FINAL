@@ -12,6 +12,11 @@ import {Contact} from './pages/Contact';
 import {About} from './pages/About'
 import { Footer } from "./Components/Footer";
 import { useEffect, useState } from "react";
+import { EduRegd } from "./Components/EduRegd";
+import { DesRegd } from "./Components/DesRegd";
+import {EduLogin} from './Components/EduLogin'
+import {DesLogin} from './Components/DesLogin'
+
 import './pages/Home.css';
 import './Components/Footer.css';
 import {CoursePage} from "./Components/CoursePage";
@@ -47,6 +52,10 @@ function App() {
         <Route exact path='/' element={<Home/>}  />
         <Route exact path='/about' element={<About/>}  />
         <Route exact path='/contact' element={<Contact/>}  />
+        <Route exact path='/educator/register' element={<EduRegd/>} />
+        <Route exact path='/designer/register' element={<DesRegd/>} />
+        <Route exact path='/educator/login' element={<EduLogin/>} />
+        <Route exact path='/designer/login' element={<DesLogin/>} />
         {
           localStorage.getItem('type')==='educator'?  <Route exact path='/profile' element={<EduProfile/>} ></Route> :  <Route exact path='/profile' element={<DesProfile/>} ></Route>
         }
