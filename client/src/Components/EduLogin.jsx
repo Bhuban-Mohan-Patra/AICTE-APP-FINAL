@@ -51,7 +51,7 @@ export const EduLogin = () => {
           console.log(localStorage.getItem('UserType'));
   
           alert(response.success)
-          Navigate(`/educator/dashboard`);
+          Navigate(`/dashboard`);
   
         }
   

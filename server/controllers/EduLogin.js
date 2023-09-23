@@ -1,5 +1,5 @@
 const Educator=require('../models/eduSchema');
-const SECRET_KEY='1231212345631345612390324234232'
+const SECRET_KEY='1231212345631345612390324234ascascas232'
 const jwt=require('jsonwebtoken');
 
 

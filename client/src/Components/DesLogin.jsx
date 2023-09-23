@@ -50,7 +50,7 @@ export const DesLogin = () => {
           console.log(localStorage.getItem('UserType'));
   
           alert(response.success)
-        //   Navigate('/');
+          Navigate('/dashboard');
   
         }
   

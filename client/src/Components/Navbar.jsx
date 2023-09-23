@@ -33,6 +33,14 @@ function Navbar() {
     }
   }
 
+  const Logout=()=>
+  {
+    localStorage.removeItem('User');
+    localStorage.removeItem('UserType');
+    Navigate('/');
+    alert('logged Out Successfully');
+  }
+
   return (
     <nav>
         <div className='nav-container'>
@@ -43,20 +51,30 @@ function Navbar() {
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/about'>About</NavLink></li>
             <li><NavLink to='/contact'>Contact us</NavLink></li>
-            <li> <select name="login" id="login" className='loginbtn' onChange={goToLogin}  defaultValue="Login As" >
-              <option value="Login as" hidden>Login As</option>
-              <option value="educator"> Educator </option>
-              <option value="designer">Designer</option>
-              </select> </li>
-            {/* <li><button className='loginbtn'><NavLink to='/login'>Log in</NavLink></button></li> */}
-            {/* <li><button className='signupbtn'><NavLink to='/signup'>Register</NavLink></button></li> */}
+
+          {
+            localStorage.getItem('User')?
             <li>
-              <select name="signup" id="signup" className='signupbtn' defaultValue="Resgiter As" onChange={goToSignup}  >
-                <option value="RegisterAs" hidden>Register As</option>
-                <option value="educator">Educator</option>
-                <option value="designer">Desginer</option>
-              </select>
-            </li>
+              <button className='loginbtn' onClick={Logout} >Logout</button>
+            </li>:
+            <><li> <select name="login" id="login" className='loginbtn' onChange={goToLogin}  defaultValue="Login As" >
+            <option value="Login as" hidden>Login As</option>
+            <option value="educator"> Educator </option>
+            <option value="designer">Designer</option>
+            </select> </li>
+          
+          <li>
+            <select name="signup" id="signup" className='signupbtn' defaultValue="Resgiter As" onChange={goToSignup}  >
+              <option value="RegisterAs" hidden>Register As</option>
+              <option value="educator">Educator</option>
+              <option value="designer">Desginer</option>
+            </select>
+          </li>
+          </>
+          }
+          
+
+            
         </ul>
     </div>
     </nav>
