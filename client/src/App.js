@@ -3,7 +3,6 @@
 // import "../node_modules/bootstrap/dist/js/bootstrap";
 import { Routes, Route } from "react-router-dom";
 import {EduProfile} from './Components/EduProfile';
-import {DesProfile} from './Components/DesProfile';
 import { Navbar } from "./Components/Navbar";
 import {CreateCurr} from './Components/CreateCurr';
 import {AllCourses} from './Components/AllCourses'
@@ -16,7 +15,7 @@ import { EduRegd } from "./Components/EduRegd";
 import { DesRegd } from "./Components/DesRegd";
 import {EduLogin} from './Components/EduLogin'
 import {DesLogin} from './Components/DesLogin'
-
+import {Dashboard} from './Components/Dashboard'
 import './pages/Home.css';
 import './Components/Footer.css';
 import {CoursePage} from "./Components/CoursePage";
@@ -56,9 +55,10 @@ function App() {
         <Route exact path='/designer/register' element={<DesRegd/>} />
         <Route exact path='/educator/login' element={<EduLogin/>} />
         <Route exact path='/designer/login' element={<DesLogin/>} />
-        {
+        <Route exact path='/dashboard' element={<Dashboard/>} />
+        {/* {
           localStorage.getItem('type')==='educator'?  <Route exact path='/profile' element={<EduProfile/>} ></Route> :  <Route exact path='/profile' element={<DesProfile/>} ></Route>
-        }
+        } */}
 
        <Route exact path='/create' element={<CreateCurr/>} />
        <Route  exact path='/allcourses' element={<AllCourses/>} />
