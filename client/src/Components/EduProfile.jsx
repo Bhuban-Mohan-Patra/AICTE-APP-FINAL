@@ -17,8 +17,8 @@ export const EduProfile = () => {
                 <div className="profileDet">
                     <h3>Profile Details</h3>
                     <div className="details">
-                            <li> <Person2Icon/> Name: <strong>Saket Nanda</strong> </li>
-                            <li><TableViewIcon/> <strong>Department: </strong> Mechanical Engg.</li>
+                            <li><Person2Icon/> <strong> Name:</strong> Saket Nanda</li>
+                            <li><TableViewIcon/> <strong>Department: </strong><p>Mechanical Engg.</p> </li>
                             <li><TodayIcon/><strong>DOB:</strong> 1/12/2002</li>
                             <li><WcIcon/> <strong>Gender:</strong> Male</li>
                             <li><ContactPhoneIcon/> <strong>Phone:</strong> 124152332</li>
