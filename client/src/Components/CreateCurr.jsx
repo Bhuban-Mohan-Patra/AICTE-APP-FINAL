@@ -9,7 +9,7 @@ function CreateCurr() {
     semester: '',
     subject: '',
     subject_code: '',
-    elective: '',
+    elective: 'open',
     credit: '',
     modules: [],
   });
@@ -30,7 +30,7 @@ function CreateCurr() {
   const addResource = (moduleIndex, topicIndex) => {
     const updatedModules = [...courseData.modules];
     updatedModules[moduleIndex].topics[topicIndex].resources.push({
-      type: '',
+      type: 'video',
       url: '',
       author: '',
     });
@@ -46,6 +46,17 @@ function CreateCurr() {
       const response = await axios.post('/create', courseData);
 
       // Handle success, show a success message, or redirect the user
+      alert('Course Created successfully');
+      setCourseData({
+        degree: 'UG',
+        title: '',
+        semester: '',
+        subject: '',
+        subject_code: '',
+        elective: 'open',
+        credit: '',
+        modules: [],
+      })
       console.log('Course created successfully', response.data);
     } catch (error) {
       // Handle errors, display an error message, etc.
@@ -56,6 +67,20 @@ function CreateCurr() {
   return (
     <div className='cform'>
       <form method='POST' className='courseform' onSubmit={handleSubmit}>
+      <div>
+          <label htmlFor="Degree">Degree:</label>
+          <select
+            type="text"
+            id="Degree"
+            name="Degree"
+            value={courseData.title}
+            onChange={(e) => setCourseData({ ...courseData, degree: e.target.value })}
+          >
+            <option value="UG">UG</option>
+            <option value="PG">PG</option>
+            <option value="Diploma">Diploma</option>
+            </select>
+        </div>
         <div>
           <label htmlFor="title">Course Title:</label>
           <input
@@ -165,6 +190,7 @@ function CreateCurr() {
                         id={`resource-type-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         name={`resource-type-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         value={resource.type}
+                        defaultValue="video"
                         onChange={(e) => {
                           const updatedModules = [...courseData.modules];
                           updatedModules[moduleIndex].topics[topicIndex].resources[resourceIndex].type = e.target.value;

@@ -49,7 +49,7 @@ export const Dashboard = () => {
     return (
         <div>
             <div className="main">
-            <Sidebar/>
+            <Sidebar UserName={User.name} />
             <div className="content">
                 <div className="profileDet">
                     <h3>Profile Details</h3>

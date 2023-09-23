@@ -15,6 +15,7 @@ import { EduRegd } from "./Components/EduRegd";
 import { DesRegd } from "./Components/DesRegd";
 import {EduLogin} from './Components/EduLogin'
 import {DesLogin} from './Components/DesLogin'
+import { Resources } from "./Components/Resources";
 import {Dashboard} from './Components/Dashboard'
 import './pages/Home.css';
 import './Components/Footer.css';
@@ -51,6 +52,7 @@ function App() {
         <Route exact path='/' element={<Home/>}  />
         <Route exact path='/about' element={<About/>}  />
         <Route exact path='/contact' element={<Contact/>}  />
+        <Route exact path='/resources' element={<Resources/>}  />
         <Route exact path='/educator/register' element={<EduRegd/>} />
         <Route exact path='/designer/register' element={<DesRegd/>} />
         <Route exact path='/educator/login' element={<EduLogin/>} />

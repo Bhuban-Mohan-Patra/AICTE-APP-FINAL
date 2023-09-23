@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const resourceSchema = new mongoose.Schema({
-  title: String,
+  // title: String,
   type: String,
   url: String,
   author: String,
