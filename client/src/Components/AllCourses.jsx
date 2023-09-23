@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import './AllCourses.css'
 export const AllCourses = () => {
 
   const [CourseArr,setCourseArr]=useState([]);
@@ -36,7 +37,7 @@ useEffect(()=>
             <div className=' border border-dark  mt-3 p-4 rounded-3 w-50' key={index} >
               <h3>{course.subject}</h3>
               <h5>Department: {course.title}</h5>
-              <h6>Credit: {course.credit}</h6>
+              <h5>Credit: {course.credit}</h5>
               <NavLink to={course._id} >  <button className='btn bg-danger text-white' >View</button></NavLink>
 
             </div>
