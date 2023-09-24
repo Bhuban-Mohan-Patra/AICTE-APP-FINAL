@@ -20,7 +20,7 @@ export const Sidebar = (props) => {
                     }
                     <NavLink to='/allcourses' className="links" > <FormatListBulletedOutlinedIcon/> All Courses</NavLink>
                     <NavLink to='/resources' className="links" > <FormatListBulletedOutlinedIcon/> Resources </NavLink>
-                    <NavLink to='/notifications' className="links" > <FormatListBulletedOutlinedIcon/> Notifications </NavLink>
+                    <NavLink to='/notifications' className="links" > <FormatListBulletedOutlinedIcon/> Notifications  </NavLink>
                 </div>
 
             </aside>
