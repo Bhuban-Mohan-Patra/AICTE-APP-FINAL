@@ -35,6 +35,7 @@ Router.post('/getUser',authenticate,(req,res)=>
 
 Router.post('/feedback', handleFeedback); 
 
+Router.post('/newcourse', handleFeedback); 
 // Router.post('/create',authenticate,(req,res)=>
 // {
 //     res.send(req.currUser);

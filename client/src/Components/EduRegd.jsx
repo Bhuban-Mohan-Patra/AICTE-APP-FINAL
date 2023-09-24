@@ -59,7 +59,7 @@ const Submit=async(e)=>
         {
             alert('Successfully Registered');
             console.log("userdata sent to server");
-            // Navigate('/login');
+            Navigate('/educator/login');
 
         }
     }

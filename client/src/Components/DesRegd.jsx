@@ -36,7 +36,7 @@ export const DesRegd = () => {
 
     const Submit = async (e) => {
         e.preventDefault();
-        console.log(userDetails);
+        console.log(userDetails)
 
         try {
             const res = await fetch('/register/Des', {
@@ -58,7 +58,7 @@ export const DesRegd = () => {
             else {
                 alert('Successfully Registered');
                 console.log("userdata sent to server");
-                // Navigate('/login');
+                Navigate('/designer/login');
 
             }
         }

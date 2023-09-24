@@ -77,7 +77,7 @@ function CreateCurr() {
     e.preventDefault();
 
     try {
-      console.log(courseData);
+      // console.log(courseData);
       // Send a POST request to your backend API endpoint
       const response = await axios.post('/create', {courseData, "creator": User._id});
 
@@ -94,6 +94,16 @@ function CreateCurr() {
         modules: [],
       })
       console.log('Course created successfully', response.data);
+      // console.log(`id is ${response.data.newcourse._id}`)
+      const res=await fetch('/newcourse',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(response.data.newcourse)
+
+        
+      })
+      const resp=await res.json();
+      
     } catch (error) {
       // Handle errors, display an error message, etc.
       console.error('Error creating course', error);
