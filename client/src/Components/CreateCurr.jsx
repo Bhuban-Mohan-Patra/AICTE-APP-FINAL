@@ -90,6 +90,7 @@ function CreateCurr() {
         title: '',
         semester: '',
         subject: '',
+        objective: '',
         subject_code: '',
         elective: 'open',
         credit: '',
@@ -159,6 +160,16 @@ function CreateCurr() {
             name="subject"
             value={courseData.subject}
             onChange={(e) => setCourseData({ ...courseData, subject: e.target.value })}
+          />
+        </div>
+        <div>
+          <label htmlFor="objective">Course Objective:</label>
+          <textarea
+            id="objective"
+            required
+            name="objective"
+            value={courseData.objective}
+            onChange={(e) => setCourseData({ ...courseData, objective: e.target.value })}
           />
         </div>
         <div>
