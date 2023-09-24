@@ -1,10 +1,14 @@
 import React, { useState,useEffect } from 'react'
+<<<<<<< HEAD
 import './CoursePage.css'
 import DashBtn from './DashBtn';
+=======
+import './CoursePage.css';
+import {Feedback} from './Feedback';
+>>>>>>> 112f30f69170014f26ed73d3fdf7742b721e7091
 export const CoursePage = (props) => {
-
-const [course,setCourse]=useState({});
-
+    
+    const [course,setCourse]=useState({});
     const getCourse=async ()=>
     {
         const res=await fetch('/coursepage',{
@@ -17,7 +21,7 @@ const [course,setCourse]=useState({});
             })
         })
         const Course=await res.json();
-        console.log(Course);
+        // console.log(Course);
         setCourse(Course);
     }
 
@@ -47,7 +51,7 @@ const [course,setCourse]=useState({});
                                     return(
                                         <div className='contentdetails' key={index}>
                                              <h4 key={index} >{topic.title}</h4>
-                                             {
+                                             {/* {
                                                 topic.resources?.map((resource,index)=>
                                                 {
                                                     return(
@@ -58,7 +62,7 @@ const [course,setCourse]=useState({});
                                                         </div>
                                                     )
                                                 })
-                                             }
+                                             } */}
                                         </div>
                                        
                                     )
@@ -72,7 +76,14 @@ const [course,setCourse]=useState({});
             })
         }
     </div>
+<<<<<<< HEAD
     <DashBtn/>
+=======
+    {
+        localStorage.getItem('UserType')==='educator'?<Feedback course={course}/>:""
+    }
+    
+>>>>>>> 112f30f69170014f26ed73d3fdf7742b721e7091
     </>
   )
 }

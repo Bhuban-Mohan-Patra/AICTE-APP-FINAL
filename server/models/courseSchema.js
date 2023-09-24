@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const resourceSchema = new mongoose.Schema({
-  title: String,
+  // title: String,
   type: String,
   url: String,
   author: String,
@@ -24,6 +24,7 @@ const moduleSchema = new mongoose.Schema({
 
 
 const courseSchema = new mongoose.Schema({
+  creator: String,
   degree: String,
   title: String,
   objective: String,

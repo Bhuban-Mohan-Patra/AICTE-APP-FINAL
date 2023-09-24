@@ -1,24 +1,63 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CreateCurr.css'
+<<<<<<< HEAD
 import DashBtn from './DashBtn';
+=======
+import { useNavigate } from 'react-router-dom';
+>>>>>>> 112f30f69170014f26ed73d3fdf7742b721e7091
 
 function CreateCurr() {
+
+  const [User, setUser] = useState({});
+  const [userType, setUserType] = useState("");
+  const Navigate = useNavigate();
+
   const [courseData, setCourseData] = useState({
     degree: 'UG',
     title: '',
     semester: '',
     subject: '',
     subject_code: '',
-    elective: '',
+    elective: 'open',
     credit: '',
     modules: [],
   });
 
+
+  const getUser = async () => {
+    const token = localStorage.getItem('User')
+    const UserType = localStorage.getItem('UserType');
+    setUserType(UserType)
+    console.log(token);
+    if (token === null)
+      Navigate('/');
+    const res = await fetch('/getUser', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        token: token,
+        type: UserType
+      })
+
+    })
+
+    const currUser = await res.json()
+    setUser(currUser);
+    //   console.log(currUser);
+  }
+
+  useEffect(() => {
+    getUser();
+  }, [])
+
+
   const addModule = () => {
     setCourseData({
       ...courseData,
-      modules: [...courseData.modules, {duration: '', topics: [] }],
+      modules: [...courseData.modules, { duration: '', topics: [] }],
     });
   };
 
@@ -31,7 +70,7 @@ function CreateCurr() {
   const addResource = (moduleIndex, topicIndex) => {
     const updatedModules = [...courseData.modules];
     updatedModules[moduleIndex].topics[topicIndex].resources.push({
-      type: '',
+      type: 'video',
       url: '',
       author: '',
     });
@@ -42,12 +81,33 @@ function CreateCurr() {
     e.preventDefault();
 
     try {
-      console.log(courseData);
+      // console.log(courseData);
       // Send a POST request to your backend API endpoint
-      const response = await axios.post('/create', courseData);
+      const response = await axios.post('/create', {courseData, "creator": User._id});
 
       // Handle success, show a success message, or redirect the user
+      alert('Course Created successfully');
+      setCourseData({
+        degree: 'UG',
+        title: '',
+        semester: '',
+        subject: '',
+        subject_code: '',
+        elective: 'open',
+        credit: '',
+        modules: [],
+      })
       console.log('Course created successfully', response.data);
+      // console.log(`id is ${response.data.newcourse._id}`)
+      const res=await fetch('/newcourse',{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(response.data.newcourse)
+
+        
+      })
+      const resp=await res.json();
+      
     } catch (error) {
       // Handle errors, display an error message, etc.
       console.error('Error creating course', error);
@@ -59,7 +119,21 @@ function CreateCurr() {
     <div className='cform'>
       <form method='POST' className='courseform' onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Course Title:</label>
+          <label htmlFor="Degree">Degree:</label>
+          <select
+            type="text"
+            id="Degree"
+            name="Degree"
+            value={courseData.degree}
+            onChange={(e) => setCourseData({ ...courseData, degree: e.target.value })}
+          >
+            <option value="UG">UG</option>
+            <option value="PG">PG</option>
+            <option value="Diploma">Diploma</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="title">Department:</label>
           <input
             type="text"
             id="title"
@@ -78,7 +152,7 @@ function CreateCurr() {
           />
         </div>
         <div>
-          <label htmlFor="subject">Subject:</label>
+          <label htmlFor="subject">Course Title:</label>
           <input type='text'
             id="subject"
             name="subject"
@@ -97,16 +171,16 @@ function CreateCurr() {
         </div>
         <div>
           <label htmlFor="elective">Elective?</label>
-          <select  id="elective"
+          <select id="elective"
             name="elective"
             value={courseData.elective}
             onChange={(e) => setCourseData({ ...courseData, elective: e.target.value })}
-            >
-              <option value="open">Open Elective</option>
-              <option value="branch">Branch Elective</option>
-              <option value="compulsary">Compulsary</option>
-           
-            </select>
+          >
+            <option value="open">Open Elective</option>
+            <option value="branch">Branch Elective</option>
+            <option value="compulsary">Compulsary</option>
+
+          </select>
         </div>
         <div>
           <label htmlFor="credit">Specify Credit:</label>
@@ -137,7 +211,7 @@ function CreateCurr() {
                 }}
               />
             </div>
-       
+
 
             {module.topics.map((topic, topicIndex) => (
               <div key={topicIndex}>
@@ -156,7 +230,7 @@ function CreateCurr() {
                     }}
                   />
                 </div>
-          
+
 
                 {topic.resources.map((resource, resourceIndex) => (
                   <div key={resourceIndex}>
@@ -167,6 +241,7 @@ function CreateCurr() {
                         id={`resource-type-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         name={`resource-type-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         value={resource.type}
+                        defaultValue="video"
                         onChange={(e) => {
                           const updatedModules = [...courseData.modules];
                           updatedModules[moduleIndex].topics[topicIndex].resources[resourceIndex].type = e.target.value;
@@ -205,7 +280,7 @@ function CreateCurr() {
                         }}
                       />
                     </div>
-                    
+
                   </div>
                 ))}
 
@@ -233,4 +308,4 @@ function CreateCurr() {
   );
 }
 
-export {CreateCurr};
+export { CreateCurr };

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './navbar.css';
-import {NavLink} from 'react-router-dom'
+import {NavLink, useLocation} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 function Navbar() {
+  const location = useLocation();
   const Navigate=useNavigate();
   // const [loginAs,setLoginAs]=useState("");
-
+  const logRef=useRef();
+  const regRef=useRef();
   const goToLogin=(e)=>
   {
     console.log(e.target.value)
@@ -41,6 +43,12 @@ function Navbar() {
     alert('logged Out Successfully');
   }
 
+  // useEffect(()=>
+  // {
+  //   regRef.current.value="Register as";
+  //   logRef.current.value="Login as";
+  // },[location.pathname])
+
   return (
     <nav>
         <div className='nav-container'>
@@ -55,17 +63,17 @@ function Navbar() {
           {
             localStorage.getItem('User')?
             <li>
-              <button className='loginbtn' onClick={Logout} >Logout</button>
+              <button className='loginbtn' onClick={Logout} id='logout' >Logout</button>
             </li>:
-            <><li> <select name="login" id="login" className='loginbtn' onChange={goToLogin}  defaultValue="Login As" >
+            <><li> <select name="login" id="login" className='loginbtn' onChange={goToLogin} ref={logRef} defaultValue="Login As" >
             <option value="Login as" hidden>Login As</option>
             <option value="educator"> Educator </option>
             <option value="designer">Designer</option>
             </select> </li>
           
           <li>
-            <select name="signup" id="signup" className='signupbtn' defaultValue="Resgiter As" onChange={goToSignup}  >
-              <option value="RegisterAs" hidden>Register As</option>
+            <select name="signup" id="signup" className='signupbtn' defaultValue="Register As" ref={regRef} onChange={goToSignup}  >
+              <option value="Register as" hidden>Register As</option>
               <option value="educator">Educator</option>
               <option value="designer">Desginer</option>
             </select>
