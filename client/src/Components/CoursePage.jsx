@@ -46,7 +46,7 @@ export const CoursePage = (props) => {
                                     return(
                                         <div className='contentdetails' key={index}>
                                              <h4 key={index} >{topic.title}</h4>
-                                             {
+                                             {/* {
                                                 topic.resources?.map((resource,index)=>
                                                 {
                                                     return(
@@ -57,7 +57,7 @@ export const CoursePage = (props) => {
                                                         </div>
                                                     )
                                                 })
-                                             }
+                                             } */}
                                         </div>
                                        
                                     )

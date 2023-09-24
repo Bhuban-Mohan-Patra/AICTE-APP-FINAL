@@ -118,7 +118,7 @@ function CreateCurr() {
           </select>
         </div>
         <div>
-          <label htmlFor="title">Course Title:</label>
+          <label htmlFor="title">Department:</label>
           <input
             type="text"
             id="title"
@@ -137,7 +137,7 @@ function CreateCurr() {
           />
         </div>
         <div>
-          <label htmlFor="subject">Subject:</label>
+          <label htmlFor="subject">Course Title:</label>
           <input type='text'
             id="subject"
             name="subject"

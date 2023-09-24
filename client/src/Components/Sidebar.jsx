@@ -14,7 +14,7 @@ export const Sidebar = (props) => {
                 </div>
 
                 <div className="bottom">
-                    <NavLink to='/profile' className="links" > <FormatListBulletedOutlinedIcon/> Dashboard </NavLink>
+                    <NavLink to='/dashboard' className="links" > <FormatListBulletedOutlinedIcon/> Dashboard </NavLink>
                     {
                       localStorage.getItem('UserType')==='designer'?<NavLink to='/create' className="links" > <FormatListBulletedOutlinedIcon/> Create new Curriculum</NavLink>:""
                     }
