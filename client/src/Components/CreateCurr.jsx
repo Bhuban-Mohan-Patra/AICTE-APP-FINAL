@@ -249,6 +249,8 @@ function CreateCurr() {
                         <option value="video">Video</option>
                         <option value="Article">Article</option>
                         <option value="Book">Book</option>
+                        <option value="Assignment">Assignment</option>
+                        <option value="Quiz">Quiz</option>
                       </select>
                     </div>
                     <div>
