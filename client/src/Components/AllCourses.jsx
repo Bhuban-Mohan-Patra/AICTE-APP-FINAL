@@ -49,9 +49,9 @@ export const AllCourses = () => {
 
   return (
     <>
-<<<<<<< HEAD
+
     
-    <div className='container0'>
+    {/* <div className='container0'>
     {
        CourseArr.map((course,index)=>
        {
@@ -66,11 +66,10 @@ export const AllCourses = () => {
           )
        })
     } 
-    </div>
+    </div> */}
     <DashBtn/>
-    </>
+   
     
-=======
     <h2 className='title' >All Courses</h2>
       <div className="filter">
         <select name="dept" id="dept" onChange={(e) => setDept(e.target.value)} >
@@ -88,7 +87,7 @@ export const AllCourses = () => {
         <input type="text" name="search" className='search' id="" placeholder="Search courses" onChange={(e)=>setSearch(e.target.value)} />
       </div>
 
-      <div className='container'>
+      <div className='container0'>
 
         {
           dept === 'All' ?
@@ -123,7 +122,6 @@ export const AllCourses = () => {
         }
       </div>
     </>
->>>>>>> 112f30f69170014f26ed73d3fdf7742b721e7091
   )
 
 }
