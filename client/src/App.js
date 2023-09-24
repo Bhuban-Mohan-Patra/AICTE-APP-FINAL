@@ -60,6 +60,7 @@ function App() {
         <Route exact path='/educator/login' element={<EduLogin/>} />
         <Route exact path='/designer/login' element={<DesLogin/>} />
         <Route exact path='/dashboard' element={<Dashboard/>} />
+        
         <Route exact path='/notifications' element={<Notifications/>} />
         <Route exact path='/educator/notifications' element={<EduNot/>} />
         {/* {

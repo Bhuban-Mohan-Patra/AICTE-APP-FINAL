@@ -47,7 +47,7 @@ export const Notifications = () => {
         <Sidebar/>
        { feedbackArr.length===0? <div>No Notifications</div>:
         
-            feedbackArr.map((feedback,index)=>
+            feedbackArr.reverse().map((feedback,index)=>
             {
                 return(
                     <div>
