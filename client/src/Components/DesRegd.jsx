@@ -73,7 +73,7 @@ export const DesRegd = () => {
 
     return (
         <div className="container">
-            <div className="title">Registration</div>
+            <div className="title">Designer Registeration</div>
             <form onSubmit={Submit}>
                 <div className="user-details">
                     <div className="input-box">

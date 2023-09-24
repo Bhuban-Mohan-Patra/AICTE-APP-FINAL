@@ -63,7 +63,7 @@ export const DesLogin = () => {
 
     return(
         <div className="container">
-            <div className="title">Registration</div>
+            <div className="title">Designer Login</div>
             <form onSubmit={Submit}>
                 <div className="user-details">
                     <div className="input-box">
@@ -76,7 +76,7 @@ export const DesLogin = () => {
                     </div>
                 </div>
                 <div className="button">
-                    <input type="Submit" defaultValue="Register" />
+                    <input type="Submit" defaultValue="SIGN IN" />
                 </div>
             </form>
         </div>

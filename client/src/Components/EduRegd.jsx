@@ -75,7 +75,7 @@ const Submit=async(e)=>
 
     return (
         <div className="container">
-            <div className="title">Registration</div>
+            <div className="title">Educator Registration</div>
             <form onSubmit={Submit}>
                 <div className="user-details">
                     <div className="input-box">
