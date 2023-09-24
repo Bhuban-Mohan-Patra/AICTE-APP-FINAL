@@ -1,6 +1,11 @@
 import React, { useState,useEffect } from 'react'
+<<<<<<< HEAD
+import './CoursePage.css'
+import DashBtn from './DashBtn';
+=======
 import './CoursePage.css';
 import {Feedback} from './Feedback';
+>>>>>>> 112f30f69170014f26ed73d3fdf7742b721e7091
 export const CoursePage = (props) => {
     
     const [course,setCourse]=useState({});
@@ -71,10 +76,14 @@ export const CoursePage = (props) => {
             })
         }
     </div>
+<<<<<<< HEAD
+    <DashBtn/>
+=======
     {
         localStorage.getItem('UserType')==='educator'?<Feedback course={course}/>:""
     }
     
+>>>>>>> 112f30f69170014f26ed73d3fdf7742b721e7091
     </>
   )
 }
