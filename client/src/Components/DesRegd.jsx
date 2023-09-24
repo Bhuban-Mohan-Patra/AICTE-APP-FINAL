@@ -35,7 +35,7 @@ export const DesRegd = () => {
     }
 
     const Submit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         console.log(userDetails)
 
         try {

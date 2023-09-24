@@ -17,6 +17,8 @@ export const Dashboard = () => {
     const [userType, setUserType] = useState("");
     const [feedbackArr, setFeedbackArr] = useState([]);
     const Navigate = useNavigate();
+
+
     const getUser = async () => {
         const token = localStorage.getItem('User')
         const UserType = localStorage.getItem('UserType');
@@ -39,8 +41,9 @@ export const Dashboard = () => {
         const currUser = await res.json()
         setUser(currUser);
         if (UserType === 'designer') {
-            setFeedbackArr(currUser.feedbacks);
+            setFeedbackArr(currUser.feedbacks)
         }
+   
         //   console.log(currUs);
     }
 

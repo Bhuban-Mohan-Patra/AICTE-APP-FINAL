@@ -21,6 +21,7 @@ import {Dashboard} from './Components/Dashboard'
 import './pages/Home.css';
 import './Components/Footer.css';
 import {CoursePage} from "./Components/CoursePage";
+import {EduNot} from "./Components/EduNot";
 function App() {
 
   const [courseArr,setCourseArr]=useState([]);
@@ -60,6 +61,7 @@ function App() {
         <Route exact path='/designer/login' element={<DesLogin/>} />
         <Route exact path='/dashboard' element={<Dashboard/>} />
         <Route exact path='/notifications' element={<Notifications/>} />
+        <Route exact path='/educator/notifications' element={<EduNot/>} />
         {/* {
           localStorage.getItem('type')==='educator'?  <Route exact path='/profile' element={<EduProfile/>} ></Route> :  <Route exact path='/profile' element={<DesProfile/>} ></Route>
         } */}
