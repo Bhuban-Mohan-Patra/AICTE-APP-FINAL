@@ -4,9 +4,10 @@
     margin: 10px;
 }
 
-#logout{
+.logoutbtn{
     position: relative;
     top: -9px;
+    margin: 3px;
 }
 
 .logoname{

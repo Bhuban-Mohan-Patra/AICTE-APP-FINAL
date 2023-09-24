@@ -63,7 +63,8 @@ function Navbar() {
           {
             localStorage.getItem('User')?
             <li>
-              <button className='loginbtn' onClick={Logout} id='logout' >Logout</button>
+              <button className='dashbtn logoutbtn'><NavLink to='/dashboard'>Go to Dashboard</NavLink></button>
+              <button className='loginbtn logoutbtn' onClick={Logout}>Logout</button>
             </li>:
             <><li> <select name="login" id="login" className='loginbtn' onChange={goToLogin} ref={logRef} defaultValue="Login As" >
             <option value="Login as" hidden>Login As</option>
