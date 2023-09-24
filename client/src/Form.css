@@ -131,11 +131,11 @@ form .button input{
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 5px;
-    background: linear-gradient(135deg, blue, white);
+    background: #2da2dc
 }
-form .button input:hover{
+/* form .button input:hover{
     background: linear-gradient(-135deg, blue, white);
-}
+} */
 @media (max-width: 584px){
     .container{
         max-width: 700px;
@@ -215,7 +215,7 @@ form .gender-details .category{
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three{
     border-color: #d9d9d9;
-    background: blue;
+    background: #2da2dc;
 }
 form input[type="radio"]{
     display: none;
@@ -239,7 +239,7 @@ form .button input{
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 5px;
-    background: linear-gradient(135deg, blue, white);
+    background: #2da2dc
 }
 #des_btn{
     display: flex;
@@ -255,5 +255,5 @@ form .button input{
 }
 
 form .button input:hover{
-    background: linear-gradient(-135deg, blue, white);
+    box-shadow: #91C8E4 0 10px 20px -10px;
 }
