@@ -2,11 +2,26 @@ label{
     font-weight: 500;
     display: inline-block;
     width: 400px;
+    line-height: 32px;
     margin-bottom: 10px;
+}
+
+select{
+    border-radius: 4px;
+    height: 27px;
+    width: 240px;
+    border:2px solid black;
+}
+
+#title,#semester,#subject,#subject_code,#credit,.mod_class{
+    border-radius: 4px;
+    height: 27px;
+    width: 240px;
 }
 
 .cform{
     padding: 20px;
+    min-height: 53.5vh;
 }
 
 button {
@@ -46,9 +61,19 @@ button:focus {
 }
 
 button:hover {
-  background-position: -20px -20px;
+    transition: ease-in 0.2s;
+    transform: scale(1.01);
 }
 
 button:focus:not(:active) {
   box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+#ct_course{
+    background-color: green;
+}
+#ct_course:hover{
+    background-color: rgb(2, 103, 2);
+    transition: ease-in 0.2s;
+    transform: scale(1.01);
 }
