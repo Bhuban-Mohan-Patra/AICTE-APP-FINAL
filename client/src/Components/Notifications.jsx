@@ -45,8 +45,8 @@ export const Notifications = () => {
   return (
     <div className="main">
         <Sidebar/>
-        <div>Notifications</div>
-        {
+       { feedbackArr.length===0? <div>No Notifications</div>:
+        
             feedbackArr.map((feedback,index)=>
             {
                 return(
@@ -61,6 +61,7 @@ export const Notifications = () => {
                 )
             })
         }
+    
     </div>
     
   )
