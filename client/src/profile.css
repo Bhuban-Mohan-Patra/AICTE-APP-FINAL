@@ -8,9 +8,12 @@
 
 .sidebar
 {
+    position: sticky;
+    top: 0;
+    left: 0;
     background-color:#91C8E4;
-    min-height: 90vh;
-    width: 25vw;
+    max-height: 90vh;
+    min-width: 25vw;
     margin-top: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -52,6 +55,7 @@
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
+    font-weight: bolder;
 }
 
 .content

@@ -1,0 +1,28 @@
+.main_container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.section
+{
+    padding: 20px;
+    background-color: rgb(207, 239, 253);
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.cont{
+    padding: 20px;
+}
+
+.c_name
+{
+    font-size: x-large;
+    color: green;
+}
+
+.feedback{
+    font-size: larger;
+    color: rgb(255, 94, 0);
+}

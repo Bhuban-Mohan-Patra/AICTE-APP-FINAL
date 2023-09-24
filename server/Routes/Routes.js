@@ -65,7 +65,7 @@ Router.get('/getnotification',async (req,res)=>
 {
     try
     {
-        console.log('he he server');
+        // console.log('he he server');
     const notifs=await eduNotifications.find();
     // console.log(notifs);
     res.status(201).send(notifs);
