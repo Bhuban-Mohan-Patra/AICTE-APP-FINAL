@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import './Feedback.css'
 export const Feedback = (props) => {
 
     const [feedbackdet,setFeedbackdet]=useState({
@@ -52,14 +52,15 @@ export const Feedback = (props) => {
     }
 
   return (
-    <div>
-        <form method='POST' onSubmit={handleSubmit}>
-            <input type="text" name="c_name" value={props.course.subject} disabled placeholder='Enter course name' onChange={handleChange}/>
+    <div className='container_feedback'>
+        <div className="title d-flex justify-content-center heading ">  <p>Any Suggestions?</p> </div>
+        <form method='POST' onSubmit={handleSubmit}  id='form'>
+            {/* <input type="text" name="c_name" value={props.course.subject} disabled placeholder='Enter course name' onChange={handleChange}/>
             <input type="text" name="c_degree" value={props.course.degree} disabled placeholder='Enter the degree to which the course belongs' onChange={handleChange}/>
             <input type="text"name="c_dept" value={props.course.title}  disabled placeholder='Enter Department name' onChange={handleChange}/>
-            <input type="text"name="c_sem" value={props.course.semester} disabled  placeholder='Enter Semester' onChange={handleChange}/>
-            <textarea name="feedback" id="" cols="30" rows="10" placeholder='Please write your feedback' onChange={handleChange}></textarea>
-            <input type="submit" value="Submit feedback" />
+            <input type="text"name="c_sem" value={props.course.semester} disabled  placeholder='Enter Semester' onChange={handleChange}/> */}
+            <textarea name="feedback" id="textarea" cols="25" rows="20" placeholder='Please write your feedback' onChange={handleChange}></textarea>
+            <div className="submit"><input type="submit" className='submit_btn' value="Submit feedback" /></div>
         </form>
     </div>
   )

@@ -27,7 +27,7 @@ useEffect(()=>
   return (
     <>
        {
-            notArr.reverse().map((not,index)=>
+            [...notArr].reverse().map((not,index)=>
             {
                 return(
                     <div>

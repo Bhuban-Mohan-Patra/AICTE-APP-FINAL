@@ -14,7 +14,7 @@ export const Resources = () => {
             }
         })
     
-        const AllCourses=await res.json();
+        const AllCourses=await res.json()
         
         setCourseArr(AllCourses);
         // console.log(`${AllCourses} from resources`);
