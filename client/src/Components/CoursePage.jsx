@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import './CoursePage.css'
+import DashBtn from './DashBtn';
 export const CoursePage = (props) => {
 
 const [course,setCourse]=useState({});
@@ -26,6 +27,7 @@ const [course,setCourse]=useState({});
     },[])
 
   return (
+    <>
     <div className='main-container'>
         <h2>{course.subject}</h2>
         <h4>Department of <strong> {course.title} </strong></h4>
@@ -70,5 +72,7 @@ const [course,setCourse]=useState({});
             })
         }
     </div>
+    <DashBtn/>
+    </>
   )
 }

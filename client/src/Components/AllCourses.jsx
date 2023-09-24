@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 // import "../node_modules/bootstrap/dist/js/bootstrap";
 import { NavLink } from 'react-router-dom';
 import './AllCourses.css'
+import DashBtn from './DashBtn';
 export const AllCourses = () => {
 
   const [CourseArr,setCourseArr]=useState([]);
@@ -31,7 +32,9 @@ useEffect(()=>
 
 
   return (
-    <div className='container'>
+    <>
+    
+    <div className='container0'>
     {
        CourseArr.map((course,index)=>
        {
@@ -47,5 +50,8 @@ useEffect(()=>
        })
     } 
     </div>
+    <DashBtn/>
+    </>
+    
   )
 }

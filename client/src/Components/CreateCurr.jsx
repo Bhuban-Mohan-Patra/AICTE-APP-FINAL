@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './CreateCurr.css'
+import DashBtn from './DashBtn';
 
 function CreateCurr() {
   const [courseData, setCourseData] = useState({
@@ -54,6 +55,7 @@ function CreateCurr() {
   };
 
   return (
+    <>
     <div className='cform'>
       <form method='POST' className='courseform' onSubmit={handleSubmit}>
         <div>
@@ -226,6 +228,8 @@ function CreateCurr() {
         <button type="submit">Create Course</button>
       </form>
     </div>
+    <DashBtn/>
+    </>
   );
 }
 
