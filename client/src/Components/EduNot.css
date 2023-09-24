@@ -35,3 +35,7 @@
     font-weight: bold;
     color: rgb(41, 49, 201);
 }
+
+.nav-link{
+    max-width: fit-content;
+}
