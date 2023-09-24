@@ -14,13 +14,13 @@ export const Sidebar = (props) => {
                 </div>
 
                 <div className="bottom">
-                    <NavLink to='/profile' className="links" > <FormatListBulletedOutlinedIcon/> Dashboard </NavLink>
+                    <NavLink to='/dashboard' className="links" > <FormatListBulletedOutlinedIcon/> Dashboard </NavLink>
                     {
                       localStorage.getItem('UserType')==='designer'?<NavLink to='/create' className="links" > <FormatListBulletedOutlinedIcon/> Create new Curriculum</NavLink>:""
                     }
                     <NavLink to='/allcourses' className="links" > <FormatListBulletedOutlinedIcon/> All Courses</NavLink>
                     <NavLink to='/resources' className="links" > <FormatListBulletedOutlinedIcon/> Resources </NavLink>
-                    <NavLink to='/notifications' className="links" > <FormatListBulletedOutlinedIcon/> Notifications </NavLink>
+                    <NavLink to='/notifications' className="links" > <FormatListBulletedOutlinedIcon/> Notifications  </NavLink>
                 </div>
 
             </aside>

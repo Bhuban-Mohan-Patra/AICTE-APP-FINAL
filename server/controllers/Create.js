@@ -3,11 +3,13 @@ const Course = require('../models/courseSchema'); // Import your Mongoose model
 
 const Create=async (req, res) => {
     try {
-      const courseData = req.body; // Get course data from the request body
-  
+      const courseData = req.body.courseData; // Get course data from the request body
+      const creator=req.body.creator;
+      courseData['creator'] = creator;
+      console.log(courseData);
       // Create a new course using the Course model
       const newCourse = new Course(courseData);
-  
+      newCourse.creator = creator;
       // Save the new course to the database
       await newCourse.save();
   

@@ -12,6 +12,7 @@ import {About} from './pages/About'
 import { Footer } from "./Components/Footer";
 import { useEffect, useState } from "react";
 import { EduRegd } from "./Components/EduRegd";
+import {Notifications} from "./Components/Notifications";
 import { DesRegd } from "./Components/DesRegd";
 import {EduLogin} from './Components/EduLogin'
 import {DesLogin} from './Components/DesLogin'
@@ -58,6 +59,7 @@ function App() {
         <Route exact path='/educator/login' element={<EduLogin/>} />
         <Route exact path='/designer/login' element={<DesLogin/>} />
         <Route exact path='/dashboard' element={<Dashboard/>} />
+        <Route exact path='/notifications' element={<Notifications/>} />
         {/* {
           localStorage.getItem('type')==='educator'?  <Route exact path='/profile' element={<EduProfile/>} ></Route> :  <Route exact path='/profile' element={<DesProfile/>} ></Route>
         } */}
