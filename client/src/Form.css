@@ -19,11 +19,15 @@ body{
     background-color: white;
     padding: 25px 30px;
     border-radius: 5px;
+    min-height: 68vh;
+    display: flex ;
+    flex-direction: column;
 }
 .container .title{
     font-size: 25px;
     font-weight: 500;
     position: relative;
+    /* justify-self: center !important; */
 }
 .container .title::before{
     content: '';
@@ -33,6 +37,9 @@ body{
     height: 3px;
     width: 30px;
     background: linear-gradient(135deg, blue, white);
+}
+form{
+    margin: auto;
 }
 .container form .user-details{
     display: flex;
