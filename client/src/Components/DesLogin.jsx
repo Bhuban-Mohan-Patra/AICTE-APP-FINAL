@@ -64,11 +64,11 @@ export const DesLogin = () => {
     return(
         <div className="container">
             <div className="title">Designer Login</div>
-            <form onSubmit={Submit}>
+            <form className="des_form" onSubmit={Submit}>
                 <div className="user-details">
                     <div className="input-box">
                         <span className="details">Email</span>
-                        <input type="text" placeholder="Enter Your Email" name='email' required onChange={changeInputs}/>
+                        <input type="text" className="email_box" placeholder="Enter Your Email" name='email' required onChange={changeInputs}/>
                     </div>
                     <div className="input-box">
                         <span className="details">Password</span>
@@ -76,7 +76,7 @@ export const DesLogin = () => {
                     </div>
                 </div>
                 <div className="button">
-                    <input type="Submit" defaultValue="SIGN IN" />
+                    <input type="Submit" id="des_btn" defaultValue="SIGN IN" />
                 </div>
             </form>
         </div>

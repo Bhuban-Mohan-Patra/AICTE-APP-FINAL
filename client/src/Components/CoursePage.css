@@ -10,9 +10,9 @@
 
 .moduledetails{
     display:grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(4,1fr);
     margin: 10px;
-    justify-content:space-between;
+    /* justify-content:space-between; */
     box-sizing: content-box;
     background-color: #cae9f9;
     border-radius: 10px;
@@ -20,3 +20,19 @@
     align-items:first baseline;
 }
 
+.moduledetails :first-child{
+    grid-column: 1/-1;
+}
+
+.mod_noCls{
+    display: flex;
+    align-items: center;
+}
+
+/* .contentdetails::after {
+    content: ', ';
+  } */
+  /* Remove the last comma from the last item */
+  /* .contentdetails:last-child::after {
+    content: '';
+  } */

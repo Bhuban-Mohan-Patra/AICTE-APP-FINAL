@@ -136,6 +136,7 @@ function CreateCurr() {
             type="text"
             id="title"
             name="title"
+            required
             value={courseData.title}
             onChange={(e) => setCourseData({ ...courseData, title: e.target.value })}
           />
@@ -144,6 +145,7 @@ function CreateCurr() {
           <label htmlFor="semester">Specify Semester:</label>
           <input type="text"
             id="semester"
+            required
             name="semester"
             value={courseData.semester}
             onChange={(e) => setCourseData({ ...courseData, semester: e.target.value })}
@@ -153,6 +155,7 @@ function CreateCurr() {
           <label htmlFor="subject">Course Title:</label>
           <input type='text'
             id="subject"
+            required
             name="subject"
             value={courseData.subject}
             onChange={(e) => setCourseData({ ...courseData, subject: e.target.value })}
@@ -162,6 +165,7 @@ function CreateCurr() {
           <label htmlFor="subject_code">Specify Subject Code:</label>
           <input type="text"
             id="subject_code"
+            required
             name="subject_code"
             value={courseData.subject_code}
             onChange={(e) => setCourseData({ ...courseData, subject_code: e.target.value })}
@@ -171,6 +175,7 @@ function CreateCurr() {
           <label htmlFor="elective">Elective?</label>
           <select id="elective"
             name="elective"
+            required
             value={courseData.elective}
             onChange={(e) => setCourseData({ ...courseData, elective: e.target.value })}
           >
@@ -184,6 +189,7 @@ function CreateCurr() {
           <label htmlFor="credit">Specify Credit:</label>
           <input type="number"
             id="credit"
+            required
             name="credit"
             value={courseData.credit}
             onChange={(e) => setCourseData({ ...courseData, credit: e.target.value })}
@@ -200,6 +206,7 @@ function CreateCurr() {
               <input
                 type="number"
                 className='mod_class'
+                required
                 id={`module-duration-${moduleIndex}`}
                 name={`module-duration-${moduleIndex}`}
                 value={module.duration}
@@ -219,6 +226,7 @@ function CreateCurr() {
                   <label htmlFor={`topic-title-${moduleIndex}-${topicIndex}`}>Topic Title:</label>
                   <input
                     type="text"
+                    required
                     className='mod_class'
                     id={`topic-title-${moduleIndex}-${topicIndex}`}
                     name={`topic-title-${moduleIndex}-${topicIndex}`}
@@ -241,6 +249,7 @@ function CreateCurr() {
                         id={`resource-type-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         name={`resource-type-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         value={resource.type}
+                        required
                         defaultValue="video"
                         onChange={(e) => {
                           const updatedModules = [...courseData.modules];
@@ -259,6 +268,7 @@ function CreateCurr() {
                       <label htmlFor={`resource-url-${moduleIndex}-${topicIndex}-${resourceIndex}`}>Resource url:</label>
                       <input type='text'
                         className='mod_class'
+                        required
                         id={`resource-url-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         name={`resource-url-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         value={resource.url}

@@ -40,7 +40,7 @@ useEffect(()=>
                          <h4>Course Name: {not.c_name}</h4>
                          <h4>Department: {not.c_branch}</h4>
                          <h4>Degree: {not.c_degree}</h4>
-                         <NavLink to= {`/allcourses/${not.c_id}`}><button className='link-btn'>Check it Out</button></NavLink>
+                         <NavLink  className='nav-link' to= {`/allcourses/${not.c_id}`}><button className='link-btn'>Check it Out</button></NavLink>
                         </div>
                     </div>
                 )

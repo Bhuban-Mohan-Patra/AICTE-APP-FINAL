@@ -43,8 +43,10 @@ export const CoursePage = (props) => {
             {
                 return(
                     <div className='moduledetails' key={index} >
-                        <h2>{`MODULE ${index+1} `}</h2>
-                        <h3>No. of Classes: {module.duration}</h3>
+                        <div className='mod_noCls'>
+                        <h2>{`MODULE ${index+1} `}:</h2>
+                        <h3>({module.duration} Classes)</h3>
+                        </div>
                         {
                             module.topics?.map((topic,index)=>
                                 {

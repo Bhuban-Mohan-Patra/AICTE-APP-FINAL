@@ -41,15 +41,24 @@ body{
 form{
     margin: auto;
 }
+.des_form{
+    box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    width: 500px;
+    padding-right: 10px;
+}
 .container form .user-details{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     margin: 20px 0 12px 0;
     justify-content: space-between;
 }
 form .user-details .input-box{
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
-    width: calc(100% /2 - 20px);
+    width: calc(100% - 10px);
 }
 .user-details .input-box .details{
     display: block;
@@ -163,47 +172,7 @@ body{
     padding: 10px;
     background: linear-gradient(135deg, blue, white);
 } */
-.container{
-    max-width: 700px;
-    width: 100%;
-    background-color: white;
-    padding: 25px 30px;
-    border-radius: 5px;
-}
-.container .title{
-    font-size: 25px;
-    font-weight: 500;
-    position: relative;
-}
-.container .title::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 30px;
-    background: linear-gradient(135deg, blue, white);
-}
-.container form .user-details{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px 0 12px 0;
-    justify-content: space-between;
-}
-form .user-details .input-box{
-    margin-bottom: 15px;
-    width: calc(100% /2 - 20px);
-}
-.user-details .input-box .details{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-.user-details .input-box .details .form-select{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
+
 .user-details .input-box input{
     height: 45px;
     width: 100%;
@@ -253,11 +222,16 @@ form input[type="radio"]{
 }
 form .button{
     height: 45px;
-    margin: 45px 0;
+    margin: 45px 0px;
 }
+.email_box{
+    margin-left: 30px;
+}
+
 form .button input{
     height: 100%;
     width: 100%;
+    margin: auto;
     outline: none;
     color: #fff;
     border: none;
@@ -267,25 +241,19 @@ form .button input{
     border-radius: 5px;
     background: #2da2dc
 }
+#des_btn{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    border-radius: 20px;
+}
+#edu_btn{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    border-radius: 20px;
+}
+
 form .button input:hover{
     box-shadow: #91C8E4 0 10px 20px -10px;
-}
-@media (max-width: 584px){
-    .container{
-        max-width: 700px;
-    }
-    form .user-details .input-box{
-        margin-bottom: 15px;
-        width: 100%;
-    }
-    form .gender-details .category{
-        width: 100%;
-    }
-    .container form .user-details{
-        max-height: 300px;
-        overflow-y: scroll;
-    }
-    .user-details::-webkit-scrollbar{
-        width: 0
-    }
 }
