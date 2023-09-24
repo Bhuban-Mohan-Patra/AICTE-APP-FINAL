@@ -65,11 +65,11 @@ export const EduLogin = () => {
     return(
         <div className="container">
             <div className="title">Educator Login</div>
-            <form onSubmit={Submit}>
+            <form className="des_form" onSubmit={Submit}>
                 <div className="user-details">
                     <div className="input-box">
                         <span className="details">Email</span>
-                        <input type="text" placeholder="Enter Your Email" name='email' required onChange={changeInputs}/>
+                        <input type="text" placeholder="Enter Your Email" name='email' className="email_box" required onChange={changeInputs}/>
                     </div>
                     <div className="input-box">
                         <span className="details">Password</span>
@@ -77,7 +77,7 @@ export const EduLogin = () => {
                     </div>
                 </div>
                 <div className="button">
-                    <input type="Submit" defaultValue="SIGN IN" />
+                    <input type="Submit" id="edu_btn" defaultValue="SIGN IN" />
                 </div>
             </form>
         </div>
