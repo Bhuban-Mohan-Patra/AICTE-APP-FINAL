@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CreateCurr.css'
+
+import DashBtn from './DashBtn';
 import { useNavigate } from 'react-router-dom';
 
 function CreateCurr() {
@@ -111,6 +113,7 @@ function CreateCurr() {
   };
 
   return (
+    <>
     <div className='cform'>
       <form method='POST' className='courseform' onSubmit={handleSubmit}>
         <div>
@@ -298,6 +301,8 @@ function CreateCurr() {
         <button type="submit">Create Course</button>
       </form>
     </div>
+    <DashBtn/>
+    </>
   );
 }
 

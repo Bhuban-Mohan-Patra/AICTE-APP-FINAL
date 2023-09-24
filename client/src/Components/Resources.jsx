@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
+import DashBtn from './DashBtn'
 export const Resources = () => {
 
     const [CourseArr,setCourseArr]=useState([]);
@@ -28,6 +29,8 @@ export const Resources = () => {
 
 
   return (
+    <>
+    <DashBtn/>
     <div className='container2'>
     <h3>All Resources</h3>
     <table border="solid" >
@@ -48,6 +51,7 @@ export const Resources = () => {
       </tbody>
     </table>
   </div>
+  </>
 );
 
   

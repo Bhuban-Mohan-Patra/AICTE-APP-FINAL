@@ -4,6 +4,11 @@
     margin: 10px;
 }
 
+#logout{
+    position: relative;
+    top: -9px;
+}
+
 .logoname{
     display: flex;
     justify-content: center;
