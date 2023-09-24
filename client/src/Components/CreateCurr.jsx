@@ -199,6 +199,7 @@ function CreateCurr() {
               <label htmlFor={`module-title-${moduleIndex}`}>Duration(number of classes to complete)</label>
               <input
                 type="number"
+                className='mod_class'
                 id={`module-duration-${moduleIndex}`}
                 name={`module-duration-${moduleIndex}`}
                 value={module.duration}
@@ -218,6 +219,7 @@ function CreateCurr() {
                   <label htmlFor={`topic-title-${moduleIndex}-${topicIndex}`}>Topic Title:</label>
                   <input
                     type="text"
+                    className='mod_class'
                     id={`topic-title-${moduleIndex}-${topicIndex}`}
                     name={`topic-title-${moduleIndex}-${topicIndex}`}
                     value={topic.title}
@@ -256,6 +258,7 @@ function CreateCurr() {
                     <div>
                       <label htmlFor={`resource-url-${moduleIndex}-${topicIndex}-${resourceIndex}`}>Resource url:</label>
                       <input type='text'
+                        className='mod_class'
                         id={`resource-url-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         name={`resource-url-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         value={resource.url}
@@ -270,6 +273,7 @@ function CreateCurr() {
                       <label htmlFor={`resource-author-${moduleIndex}-${topicIndex}-${resourceIndex}`}>Author(optional):</label>
                       <input
                         type="text"
+                        className='mod_class'
                         id={`resource-author-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         name={`resource-author-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         value={resource.author}
@@ -300,7 +304,7 @@ function CreateCurr() {
           Add Module
         </button>
 
-        <button type="submit">Create Course</button>
+        <button type="submit" id="ct_course">Create Course</button>
       </form>
     </div>
     <DashBtn/>
