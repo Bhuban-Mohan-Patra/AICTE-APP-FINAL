@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CreateCurr.css'
-<<<<<<< HEAD
+
 import DashBtn from './DashBtn';
-=======
 import { useNavigate } from 'react-router-dom';
->>>>>>> 112f30f69170014f26ed73d3fdf7742b721e7091
 
 function CreateCurr() {
 
