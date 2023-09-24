@@ -91,7 +91,7 @@ export const AllCourses = () => {
 
         {
           dept === 'All' ?
-          CourseArr.filter((course)=>
+          [...CourseArr].reverse().filter((course)=>
           {
             return(course.subject.toLowerCase().includes(search.toLowerCase()))
           })
@@ -106,7 +106,7 @@ export const AllCourses = () => {
                 </div>
               )
             }) :
-            CourseArr.filter((course) => {
+            [...CourseArr].reverse().filter((course) => {
               return (course.title === dept && course.subject.toLowerCase().includes(search.toLowerCase()))
             }).map((course, index) => {
               return (

@@ -23,6 +23,18 @@
 .moduledetails :first-child{
     grid-column: 1/-1;
 }
+#noofclasses{
+    grid-column: 1/-1;
+    color: rgb(255, 39, 1);
+}
+
+#moduleno{
+    color: green;
+    font-weight: bolder;
+}
+#topics{
+    grid-column: 1/-1;
+}
 
 .mod_noCls{
     display: flex;
