@@ -5,47 +5,101 @@ import { NavLink } from 'react-router-dom';
 import './AllCourses.css'
 export const AllCourses = () => {
 
-  const [CourseArr,setCourseArr]=useState([]);
-
-const getAllCourses=async ()=>
-{
-    const res=await fetch('/allcourses',{
-        method: 'GET',
-        headers:{
-            'Content-Type': 'application/json',
-        }
+  const [CourseArr, setCourseArr] = useState([]);
+  const [deptArr, setdeptArr] = useState([]);
+  const [dept, setDept] = useState("All");
+  const getAllCourses = async () => {
+    const res = await fetch('/allcourses', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
     })
 
-    const AllCourses=await res.json();
+    const AllCourses = await res.json();
     // console.log(AllCourses);
 
     setCourseArr(AllCourses);
 
-}
+  }
 
-useEffect(()=>
-{
+  const [search,setSearch]=useState('');
+
+  const getTopicArr = () => {
+    const Arr = CourseArr.map((course) => course.title);
+    const deptSet = new Set(Arr);
+
+    // Convert the Set back to an array (if needed)
+    const distinctDepts = Array.from(deptSet);
+    setdeptArr(distinctDepts);
+    console.log(deptArr);
+  };
+
+  useEffect(() => {
     getAllCourses();
-},[])
+  }, []);
+
+  useEffect(() => {
+    // Call getTopicArr after CourseArr is updated
+    getTopicArr();
+  }, [CourseArr]);
 
 
 
   return (
-    <div className='container'>
-    {
-       CourseArr.map((course,index)=>
-       {
-          return(
-            <div className=' border border-dark  mt-3 p-4 rounded-3 w-50' key={index} >
-              <h3>{course.subject}</h3>
-              <h5>Department: {course.title}</h5>
-              <h5>Credit: {course.credit}</h5>
-              <NavLink to={course._id} >  <button className='btn bg-danger text-white' >View</button></NavLink>
+    <>
+    <h2 className='title' >All Courses</h2>
+      <div className="filter">
+        <select name="dept" id="dept" onChange={(e) => setDept(e.target.value)} >
+          <option value="All">All</option>
+          {
 
-            </div>
-          )
-       })
-    } 
-    </div>
+            deptArr.map((dept) => {
+              return (
+                <option value={dept}>{dept}</option>
+              )
+            })
+          }
+        </select>
+
+        <input type="text" name="search" className='search' id="" placeholder="Search courses" onChange={(e)=>setSearch(e.target.value)} />
+      </div>
+
+      <div className='container'>
+
+        {
+          dept === 'All' ?
+          CourseArr.filter((course)=>
+          {
+            return(course.subject.toLowerCase().includes(search.toLowerCase()))
+          })
+            .map((course, index) => {
+              return (
+                <div className=' border border-dark  mt-3 p-4 rounded-3 w-50' key={index} >
+                  <h3>{course.subject}</h3>
+                  <h5>Department: {course.title}</h5>
+                  <h5>Credit: {course.credit}</h5>
+                  <NavLink to={course._id} >  <button className='btn bg-danger text-white' >View</button></NavLink>
+
+                </div>
+              )
+            }) :
+            CourseArr.filter((course) => {
+              return (course.title === dept && course.subject.toLowerCase().includes(search.toLowerCase()))
+            }).map((course, index) => {
+              return (
+                <div className=' border border-dark  mt-3 p-4 rounded-3 w-50' key={index} >
+                  <h3>{course.subject}</h3>
+                  <h5>Department: {course.title}</h5>
+                  <h5>Credit: {course.credit}</h5>
+                  <NavLink to={course._id} >  <button className='btn bg-danger text-white' >View</button></NavLink>
+
+                </div>
+              )
+            })
+        }
+      </div>
+    </>
   )
+
 }

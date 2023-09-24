@@ -44,7 +44,7 @@ export const Resources = () => {
       <tbody>
         
 
-        
+
       </tbody>
     </table>
   </div>

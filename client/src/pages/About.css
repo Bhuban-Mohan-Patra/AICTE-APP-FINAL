@@ -3,5 +3,6 @@
 }
 
 .aboutpg{
+    min-height: 70vh;
     padding: 20px;
 }
