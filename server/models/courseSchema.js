@@ -24,6 +24,7 @@ const moduleSchema = new mongoose.Schema({
 
 
 const courseSchema = new mongoose.Schema({
+  creator: String,
   degree: String,
   title: String,
   objective: String,

@@ -1,9 +1,9 @@
 import React, { useState,useEffect } from 'react'
-import './CoursePage.css'
+import './CoursePage.css';
+import {Feedback} from './Feedback';
 export const CoursePage = (props) => {
-
-const [course,setCourse]=useState({});
-
+    
+    const [course,setCourse]=useState({});
     const getCourse=async ()=>
     {
         const res=await fetch('/coursepage',{
@@ -16,7 +16,7 @@ const [course,setCourse]=useState({});
             })
         })
         const Course=await res.json();
-        console.log(Course);
+        // console.log(Course);
         setCourse(Course);
     }
 
@@ -26,6 +26,7 @@ const [course,setCourse]=useState({});
     },[])
 
   return (
+    <>
     <div className='main-container'>
         <h2>{course.subject}</h2>
         <h4>Department of <strong> {course.title} </strong></h4>
@@ -70,5 +71,10 @@ const [course,setCourse]=useState({});
             })
         }
     </div>
+    {
+        localStorage.getItem('UserType')==='educator'?<Feedback course={course}/>:""
+    }
+    
+    </>
   )
 }

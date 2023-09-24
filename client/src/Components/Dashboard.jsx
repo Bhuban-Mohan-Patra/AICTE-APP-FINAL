@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { createContext, useEffect,useState } from 'react'
 import '../profile.css';
 import Person2Icon from '@mui/icons-material/Person2';
 import TableViewIcon from '@mui/icons-material/TableView';
@@ -9,10 +9,13 @@ import EmailIcon from '@mui/icons-material/Email';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import {Sidebar} from './Sidebar'
 import { useNavigate } from 'react-router-dom';
+
+
 export const Dashboard = () => {
 
     const [User,setUser]=useState({});
     const [userType,setUserType]=useState("");
+    const [feedbackArr,setFeedbackArr]=useState([]);
     const Navigate=useNavigate();
     const getUser=async ()=>
     {
@@ -22,7 +25,7 @@ export const Dashboard = () => {
         console.log(token);
         if(token===null)
             Navigate('/');
-        const res=await fetch('/dashboard',{
+        const res=await fetch('/getUser',{
             method: 'POST',
             headers:{
               'Content-Type': 'application/json'
@@ -36,7 +39,11 @@ export const Dashboard = () => {
 
           const currUser=await res.json()
           setUser(currUser);
-        //   console.log(currUser);
+          if(UserType==='designer')
+          {
+            setFeedbackArr(currUser.feedbacks);
+          }
+        //   console.log(currUs);
     }
 
     useEffect(()=>
@@ -49,7 +56,7 @@ export const Dashboard = () => {
     return (
         <div>
             <div className="main">
-            <Sidebar UserName={User.name} />
+            <Sidebar UserName={User.name} feedbackarr={feedbackArr} />
             <div className="content">
                 <div className="profileDet">
                     <h3>Profile Details</h3>
