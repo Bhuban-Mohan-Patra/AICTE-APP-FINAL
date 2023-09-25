@@ -6,21 +6,29 @@ import './AllCourses.css'
 import DashBtn from './DashBtn';
 export const AllCourses = () => {
 
+  const [isLoading, setIsLoading] = useState(true);
   const [CourseArr, setCourseArr] = useState([]);
   const [deptArr, setdeptArr] = useState([]);
   const [dept, setDept] = useState("All");
+
+
   const getAllCourses = async () => {
-    const res = await fetch('/allcourses', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
+    try
+    {
+      const res = await fetch('/allcourses', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+  
+      const AllCourses = await res.json();
+      // console.log(AllCourses);
+  
+      setCourseArr(AllCourses);
+      setIsLoading(false);
+    }catch(err){console.log(err);}
 
-    const AllCourses = await res.json();
-    // console.log(AllCourses);
-
-    setCourseArr(AllCourses);
 
   }
 
@@ -46,6 +54,9 @@ export const AllCourses = () => {
   }, [CourseArr]);
 
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+}
 
   return (
     <>

@@ -30,11 +30,15 @@ export const CoursePage = (props) => {
         getCourse();
     }, [])
 
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
     return (
+        
         <>
 
             <div className="main-container">
-                {/* Render course details */}
                 <h2>{course.subject}</h2>
                 <h4>Department of <strong>{course.title}</strong></h4>
                 <h4>Semester: {course.semester}</h4>
@@ -49,11 +53,11 @@ export const CoursePage = (props) => {
                         {/* <br /> */}
                         {module.topics?.map((topic, topicIndex) => (
                             <div className="contentdetails" key={topicIndex}>
-                                <h4>{topic.title}</h4>
+                                <h3>{topic.title}</h3>
                                 {
                                     topic.resources.map((resource, resourceIndex) => {
                                         return (
-                                            <div> <a href={resource.url} target='_blank' rel="noreferrer" >{resource.url}</a> </div>
+                                            <div> <a href={resource.url} style={{"fontSize":"smaller"}} target='_blank' rel="noreferrer" >{resource.url}</a> </div>
                                         )
                                     })
                                 }
