@@ -143,7 +143,7 @@ export const Resources = () => {
                           <h4>Quizes:</h4>
                           <ul>
                             {topic.resources
-                              ?.filter((resource) => resource.type === 'Assignment')
+                              ?.filter((resource) => resource.type === 'Quiz')
                               .map((Quiz, QuizIndex) => (
                                 <li key={QuizIndex}>
                                   <a

@@ -261,7 +261,7 @@ function CreateCurr() {
                         name={`resource-type-${moduleIndex}-${topicIndex}-${resourceIndex}`}
                         value={resource.type}
                         required
-                        defaultValue="video"
+                      
                         onChange={(e) => {
                           const updatedModules = [...courseData.modules];
                           updatedModules[moduleIndex].topics[topicIndex].resources[resourceIndex].type = e.target.value;
