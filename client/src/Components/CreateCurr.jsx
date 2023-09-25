@@ -163,7 +163,7 @@ function CreateCurr() {
           />
         </div>
         <div>
-          <label htmlFor="objective">Course Objective:</label>
+          <label htmlFor="objective" id='obj_txt'>Course Objective:</label>
           <textarea
             id="objective"
             required
@@ -184,7 +184,7 @@ function CreateCurr() {
         </div>
         <div>
           <label htmlFor="elective">Elective?</label>
-          <select id="elective"
+          <select id="elective" 
             name="elective"
             required
             value={courseData.elective}
