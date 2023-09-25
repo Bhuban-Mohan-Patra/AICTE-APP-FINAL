@@ -59,7 +59,7 @@ export const Notifications = () => {
                         <h4 className='c_degree'>{feedback.c_degree}</h4>
                         <h5 className='class'>{feedback.c_dept}</h5>
                         <h5 className='class'>{feedback.c_sem}</h5>
-                       Feedback: <h4 className='feedback'>{feedback.feedback}</h4>
+                       Feedback: <h4 className='feedback'>"{feedback.feedback}"</h4>
 
                     </div>
                 )

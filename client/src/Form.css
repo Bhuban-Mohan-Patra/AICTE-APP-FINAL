@@ -58,7 +58,7 @@ form .user-details .input-box{
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    width: 100px;
+    width: calc(100% - 10px);
 }
 .user-details .input-box .details{
     display: block;
@@ -131,11 +131,11 @@ form .button input{
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 5px;
-    background: linear-gradient(135deg, blue, white);
+    background: #2da2dc
 }
-form .button input:hover{
+/* form .button input:hover{
     background: linear-gradient(-135deg, blue, white);
-}
+} */
 @media (max-width: 584px){
     .container{
         max-width: 700px;
@@ -172,47 +172,7 @@ body{
     padding: 10px;
     background: linear-gradient(135deg, blue, white);
 } */
-.container{
-    max-width: 700px;
-    width: 100%;
-    background-color: white;
-    padding: 25px 30px;
-    border-radius: 5px;
-}
-.container .title{
-    font-size: 25px;
-    font-weight: 500;
-    position: relative;
-}
-.container .title::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 30px;
-    background: linear-gradient(135deg, blue, white);
-}
-.container form .user-details{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px 0 12px 0;
-    justify-content: space-between;
-}
-form .user-details .input-box{
-    margin-bottom: 15px;
-    width: calc(100% - 10px);
-}
-.user-details .input-box .details{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-.user-details .input-box .details .form-select{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
+
 .user-details .input-box input{
     height: 45px;
     width: 100%;
@@ -255,7 +215,7 @@ form .gender-details .category{
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three{
     border-color: #d9d9d9;
-    background: blue;
+    background: #2da2dc;
 }
 form input[type="radio"]{
     display: none;
@@ -279,7 +239,7 @@ form .button input{
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 5px;
-    background: linear-gradient(135deg, blue, white);
+    background: #2da2dc
 }
 #des_btn{
     display: flex;
@@ -295,24 +255,5 @@ form .button input{
 }
 
 form .button input:hover{
-    background: linear-gradient(-135deg, blue, white);
-}
-@media (max-width: 584px){
-    .container{
-        max-width: 700px;
-    }
-    form .user-details .input-box{
-        margin-bottom: 15px;
-        width: 100%;
-    }
-    form .gender-details .category{
-        width: 100%;
-    }
-    .container form .user-details{
-        max-height: 300px;
-        overflow-y: scroll;
-    }
-    .user-details::-webkit-scrollbar{
-        width: 0
-    }
+    box-shadow: #91C8E4 0 10px 20px -10px;
 }
