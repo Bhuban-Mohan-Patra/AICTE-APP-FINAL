@@ -30,7 +30,7 @@ export const Resources = () => {
 
   return (
     <>
-      <h3>All Resources</h3>
+      <h3 id='h3' >All Resources</h3>
 
       <div className="filter">
         <select
@@ -68,13 +68,13 @@ export const Resources = () => {
                 course.subject.toLowerCase().includes(search.toLowerCase())
               )
               .map((course, courseIndex) => (
-                <div key={courseIndex}>
+                <div className='courseDiv' key={courseIndex}>
                   <h3>{course.subject}</h3>
                   {course.modules?.map((module, moduleIndex) => (
                     <div key={moduleIndex}>
-                      <h3>Module {moduleIndex + 1}</h3>
+                      {/* <h3>Module {moduleIndex + 1}</h3> */}
                       {module.topics?.map((topic, topicIndex) => (
-                        <div key={topicIndex}>
+                        <div className='topicDiv' key={topicIndex}>
                           <h3>{topic.title}</h3>
                           <h4>Videos:</h4>
                           <ul>
@@ -88,6 +88,70 @@ export const Resources = () => {
                                     rel="noopener noreferrer"
                                   >
                                     {video.url}
+                                  </a>
+                                </li>
+                              ))}
+                          </ul>
+                          <h4>Articles:</h4>
+                          <ul>
+                            {topic.resources
+                              ?.filter((resource) => resource.type === 'Article')
+                              .map((Article, ArticleIndex) => (
+                                <li key={ArticleIndex}>
+                                  <a
+                                    href={Article.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {Article.url}
+                                  </a>
+                                </li>
+                              ))}
+                          </ul>
+                          <h4>Books:</h4>
+                          <ul>
+                            {topic.resources
+                              ?.filter((resource) => resource.type === 'Book')
+                              .map((Book, BookIndex) => (
+                                <li key={BookIndex}>
+                                  <a
+                                    href={Book.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {Book.url}
+                                  </a>
+                                </li>
+                              ))}
+                          </ul>
+                          <h4>Assignments:</h4>
+                          <ul>
+                            {topic.resources
+                              ?.filter((resource) => resource.type === 'Assignment')
+                              .map((Assignments, AssignmentsIndex) => (
+                                <li key={AssignmentsIndex}>
+                                  <a
+                                    href={Assignments.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {Assignments.url}
+                                  </a>
+                                </li>
+                              ))}
+                          </ul>
+                          <h4>Quizes:</h4>
+                          <ul>
+                            {topic.resources
+                              ?.filter((resource) => resource.type === 'Assignment')
+                              .map((Quiz, QuizIndex) => (
+                                <li key={QuizIndex}>
+                                  <a
+                                    href={Quiz.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {Quiz.url}
                                   </a>
                                 </li>
                               ))}
@@ -108,13 +172,13 @@ export const Resources = () => {
                 );
               })
               .map((course, courseIndex) => (
-                <div key={courseIndex}>
+                <div className='courseDiv' key={courseIndex}>
                   <h3>{course.subject}</h3>
                   {course.modules?.map((module, moduleIndex) => (
                     <div key={moduleIndex}>
                       <h3>Module {moduleIndex + 1}</h3>
                       {module.topics?.map((topic, topicIndex) => (
-                        <div key={topicIndex}>
+                        <div className='topicDiv'  key={topicIndex}>
                           <h3>{topic.title}</h3>
                           <h4>Videos:</h4>
                           <ul>

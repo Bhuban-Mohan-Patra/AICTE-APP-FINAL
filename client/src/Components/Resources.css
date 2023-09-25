@@ -1,24 +1,35 @@
 
-/* .table-container{
-    display: flex;
-    justify-content: center;
+.courseDiv{
+    background-color: rgb(138, 138, 242);
+    min-height: 20vh;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
 }
 
-.table{
-    width: 95%;
+.container2{
+    display: grid;
+    grid-template-columns: auto;
 }
 
-.table td{
+.topicDiv{
+    background-color: rgb(237, 231, 231);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#h3
+{
     text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
 }
 
-.link{
-    color: rgba(0, 0, 255, 0.815);
-    cursor: pointer;
+a{
+    color: rgba(0, 123, 255, 0.959);
 }
 
-.link:hover{
-    color: blue;
-    transform: scale(1.025);
-} */
-
+a:hover{
+    color: rgb(0, 15, 125);
+}

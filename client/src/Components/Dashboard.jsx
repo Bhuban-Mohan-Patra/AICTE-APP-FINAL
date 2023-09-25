@@ -17,6 +17,7 @@ export const Dashboard = () => {
     const [userType, setUserType] = useState("");
     const [feedbackArr, setFeedbackArr] = useState([]);
     const Navigate = useNavigate();
+    const [isLoading, setIsloading ]=useState(true);
 
 
     const getUser = async () => {
@@ -40,6 +41,7 @@ export const Dashboard = () => {
 
         const currUser = await res.json()
         setUser(currUser);
+        setIsloading(false);
         if (UserType === 'designer') {
             setFeedbackArr(currUser.feedbacks)
         }
@@ -53,8 +55,13 @@ export const Dashboard = () => {
 
 
 
+
+
     return (
-        <div>
+        isLoading?(
+            <div>Loading...</div>
+        ):(
+            <div>
             <div className="main">
                 <Sidebar UserName={User.name} feedbackarr={feedbackArr} />
                 <div className="content">
@@ -91,5 +98,7 @@ export const Dashboard = () => {
             </div>
 
         </div>
+        )
+        
     )
 }

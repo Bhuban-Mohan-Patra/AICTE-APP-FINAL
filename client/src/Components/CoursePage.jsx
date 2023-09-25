@@ -54,13 +54,13 @@ export const CoursePage = (props) => {
                         {module.topics?.map((topic, topicIndex) => (
                             <div className="contentdetails" key={topicIndex}>
                                 <h3>{topic.title}</h3>
-                                {
+                                {/* {
                                     topic.resources.map((resource, resourceIndex) => {
                                         return (
                                             <div> <a href={resource.url} style={{"fontSize":"smaller"}} target='_blank' rel="noreferrer" >{resource.url}</a> </div>
                                         )
                                     })
-                                }
+                                } */}
                             </div>
                         ))}
                     </div>
