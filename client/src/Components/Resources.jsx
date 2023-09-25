@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import DashBtn from './DashBtn'
+import './Resources.css'
 export const Resources = () => {
 
   const [CourseArr, setCourseArr] = useState([]);
@@ -97,7 +98,7 @@ export const Resources = () => {
       </div>
     </>
   );
-  
+    
   
 
 
