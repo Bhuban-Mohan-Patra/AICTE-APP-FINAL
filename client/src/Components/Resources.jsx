@@ -34,7 +34,7 @@ export const Resources = () => {
         <h3>All Resources</h3>
         {CourseArr.map((course, courseIndex) => (
           <div key={courseIndex}>
-            <h3>{course.subject}</h3>
+            {/* <h3>{course.subject}</h3> */}
             {course.modules?.map((module, moduleIndex) => (
               <div key={moduleIndex}>
                 {/* <h3>Module {moduleIndex + 1}</h3> */}
