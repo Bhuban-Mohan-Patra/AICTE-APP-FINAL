@@ -8,15 +8,27 @@ label{
 
 select{
     border-radius: 4px;
-    height: 27px;
+    height: 37px;
     width: 240px;
     border:2px solid black;
 }
 
+#elective,#Degree{
+    margin-bottom: 15px;
+}
+
 #title,#semester,#subject,#subject_code,#credit,.mod_class{
     border-radius: 4px;
-    height: 27px;
+    height: 37px;
     width: 240px;
+    margin-bottom: 15px;
+}
+
+#objective{
+    width: 240px;
+    padding: 5px;
+    border-radius: 4px;
+    border:2px solid black;
 }
 
 .cform{
