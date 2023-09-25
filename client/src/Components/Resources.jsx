@@ -37,7 +37,7 @@ export const Resources = () => {
             <h3>{course.subject}</h3>
             {course.modules?.map((module, moduleIndex) => (
               <div key={moduleIndex}>
-                <h3>Module {moduleIndex + 1}</h3>
+                {/* <h3>Module {moduleIndex + 1}</h3> */}
                 {module.topics?.map((topic, topicIndex) => (
                   <div key={topicIndex}>
                     <h3>{topic.title}</h3>
