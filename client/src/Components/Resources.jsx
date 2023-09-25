@@ -89,6 +89,18 @@ export const Resources = () => {
                           </li>
                         ))}
                     </ul>
+                    <h4>Books:</h4>
+                    <ul>
+                      {topic.resources
+                        ?.filter((resource) => resource.type === 'Book')
+                        .map((book, bookIndex) => (
+                          <li key={bookIndex}>
+                            <a href={book.url} target='_blank'>
+                              {book.url}
+                            </a>
+                          </li>
+                        ))}
+                    </ul>
                   </div>
                 ))}
               </div>
