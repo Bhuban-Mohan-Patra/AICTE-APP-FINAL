@@ -62,25 +62,6 @@ export const AllCourses = () => {
     <>
 
     
-    {/* <div className='container0'>
-    {
-       CourseArr.map((course,index)=>
-       {
-          return(
-            <div className=' border border-dark  mt-3 p-4 rounded-3 w-50' key={index} >
-              <h3>{course.subject}</h3>
-              <h5>Department: {course.title}</h5>
-              <h5>Credit: {course.credit}</h5>
-              <NavLink to={course._id} >  <button className='btn bg-danger text-white' >View</button></NavLink>
-
-            </div>
-          )
-       })
-    } 
-    </div> */}
-    <DashBtn/>
-   
-    
     <h2 className='title' >All Courses</h2>
       <div className="filter">
         <select name="dept" id="dept" onChange={(e) => setDept(e.target.value)} >
